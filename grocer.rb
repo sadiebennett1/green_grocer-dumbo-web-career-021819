@@ -97,26 +97,26 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-#   # code here
-#   new_hash = {}
-#   cart.each do |item, descript_hash|
-#     if descript_hash[:clearance] == true
-#         description = {}
-#         descript_hash.each do |title, num|
-#             if title == :price
-#                 new = num - (num * 0.20)
-#                 description[title] = new
-#             else
-#                 description[title] = num
-#             end
-#             new_hash[item] = description
-#         end
-#     else
-#         new_hash[item] = descript_hash
-#     end
-#
-#   end
-#   return new_hash
+  # code here
+  new_hash = {}
+  cart.each do |item, descript_hash|
+    if descript_hash[:clearance] == true
+        description = {}
+        descript_hash.each do |title, num|
+            if title == :price
+                new = num - (num * 0.20)
+                description[title] = new
+            else
+                description[title] = num
+            end
+            new_hash[item] = description
+        end
+    else
+        new_hash[item] = descript_hash
+    end
+
+  end
+  return new_hash
 # end
 #
 # def checkout(cart, coupons)
